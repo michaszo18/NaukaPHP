@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ToDo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="app-container">
+        <h3 class="text-center">Lista zadań do wykonania</h3>
+        <section class="new-task-container">
+            <form>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Nazwa zadania...">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" type="submit">Dodaj zadanie</button>
+                    </span>
+                </div>
+            </form>
+
+        </section>
+        <section class="tasks-container">
+            <ul>
+                <li class="single-task">
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                                <button class="btn btn-default toggle-complete-btn"><i class="fa fa-check"></i></button>
+                        </span>
+                        <input type="text" class="form-control" value="Zadanie1">
+                        <span class="input-group-btn">
+                                <button class="btn btn-danger delete-task-btn"><i class="fa fa-times"></i></button>
+                        </span>
+                    </div>
+                </li>
+                <li class="single-task">
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default toggle-complete-btn"><i class="fa fa-check"></i></button>
+                        </span>
+                        <input type="text" class="form-control" value="Zadanie2">
+                        <span class="input-group-btn">
+                            <button class="btn btn-danger delete-task-btn"><i class="fa fa-times"></i></button>
+                        </span>
+                    </div>
+                    </li>
+                    <li class="single-task">
+                        <div class="input-group">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default toggle-complete-btn"><i class="fa fa-check"></i></button>
+                            </span>
+                            <input type="text" class="form-control" value="Zadanie3">
+                            <span class="input-group-btn">
+                                <button class="btn btn-danger delete-task-btn"><i class="fa fa-times"></i></button>
+                            </span>
+                        </div>
+                    </li>
+            </ul>
+        </section>
+    </main>
+    <script src="scripts.js"></script>
+</body>
+</html>

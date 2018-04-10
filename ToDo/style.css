@@ -1,0 +1,44 @@
+html,body
+{
+    height: 100%;
+}
+body 
+{
+    background: linear-gradient(to right, rgb(8, 17, 136) , rgb(38, 114, 255));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-container
+{
+    max-width: 600px;
+    width: 100%;
+    padding: 25px;
+    background: rgba(255,255,255,0.9);
+    box-shadow: 0 0 100px rgba(0,0,0,0.1);
+    border-radius: 10px; 
+}
+
+.app-container h3
+{
+    margin: 0 0 25px;
+}
+
+/* New Task */
+.new-task-container
+{
+    margin-bottom: 20px;
+}
+
+/* Tasks list */
+.tasks-container ul 
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.single-task
+{
+    margin-bottom: 5px;
+}
