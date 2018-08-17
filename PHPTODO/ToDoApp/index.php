@@ -20,32 +20,33 @@
         </form>
         
         <?php 
-            $object = new DBConn();
-
-            $object -> query('SELECT * FROM tasks');
+            $con = new DBConn;
+            $con->connect();  
+            $stmt = $con->connect()->query("SELECT * FROM tasks");
+            $stmt->execute();
+            $tasks = $stmt->fetchAll();
 
             echo '<ul>';
-
-            while($row = $stmt->fetch())
-            {
+            foreach ($tasks as $task) {
                     //Słaby sposób na przesyłanie id zadania
-                    $idNum = $row['id'];
-                    if($row['status'] == 1) {
+                    //Jak inaczej przesyłać numer zadania do funkcji
+                    $idNum = $task['id'];
+                    if($task['status'] == 1) {
                         echo "<li><s>";
                             echo "<form action='done.php' method='POST'>";
-                            echo "<span name='task".$row['id']."'>".$row['id'].'. '.$row['task']."</span>";
+                            echo "<span name='task".$task['id']."'>".$task['id'].'. '.$task['task']."</span>";
                             echo "<button name = 'done' class ='done'>Oznacz jako ukończone</button>";
                             echo "<button name = 'delete' class = 'delete'>Usuń zadanie</button>";
-                            echo "<input type='text' name='id' value=".$row['id'].">";
+                            echo "<input type='text' name='id' value=".$task['id'].">";
                             echo "</form>";
                         echo "</s></li>";
                     } else {
                          echo "<li>";
                             echo "<form action='done.php' method='POST'>";
-                            echo "<span name='task".$row['id']."'>".$row['id'].'. '.$row['task']."</span>";                           
+                            echo "<span name='task".$task['id']."'>".$task['id'].'. '.$task['task']."</span>";                           
                             echo "<button name ='done' class ='done'>Oznacz jako ukończone</button>";
                             echo "<button name = 'delete' class = 'delete'>Usuń zadanie</button>";
-                            echo "<input type='text' name='id' value=".$row['id'].">";
+                            echo "<input type='text' name='id' value=".$task['id'].">";
                             echo "</form>";
                         echo "</li>";
                 }
