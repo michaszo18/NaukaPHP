@@ -21,7 +21,7 @@
         
         <?php 
             $con = new DBConn; 
-            $stmt = $con->connect()->query("SELECT * FROM tasks");
+            $stmt = $con->connect()->prepare("SELECT * FROM tasks");
             $stmt->execute();
             $tasks = $stmt->fetchAll();
             echo '<ul>';
@@ -31,7 +31,7 @@
                     $idNum = $task['id'];
                     if($task['status'] == 1) {
                         echo "<li><s>";
-                            echo "<form action='done.php' method='POST'>";
+                            echo "<form action='taskActivity.php' method='POST'>";
                             echo "<span name='task".$task['id']."'>".$task['id'].'. '.$task['task']."</span>";
                             echo "<button name = 'done' class ='done'>Oznacz jako ukończone</button>";
                             echo "<button name = 'delete' class = 'delete'>Usuń zadanie</button>";
@@ -40,7 +40,7 @@
                         echo "</s></li>";
                     } else {
                          echo "<li>";
-                            echo "<form action='done.php' method='POST'>";
+                            echo "<form action='taskActivity.php' method='POST'>";
                             echo "<span name='task".$task['id']."'>".$task['id'].'. '.$task['task']."</span>";                           
                             echo "<button name ='done' class ='done'>Oznacz jako ukończone</button>";
                             echo "<button name = 'delete' class = 'delete'>Usuń zadanie</button>";
@@ -59,7 +59,6 @@
     </div>
     <form action="deleteAll.php" method="get">
         <button type="submit">Usuń wszystko</button>
-       
     </form>
 
 
