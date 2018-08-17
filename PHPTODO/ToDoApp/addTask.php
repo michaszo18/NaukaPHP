@@ -9,7 +9,7 @@ $zadanie = $_POST['newTask'];
         $query = 'SELECT MAX(id) FROM tasks';
         $result = $pdo->query($query);
         if(!$result) {
-            echo "Dupa";
+            echo "błąd pobierania danych";
         }
         //Zapisanie max id do zmiennej ID
         foreach ($result as $row) {
@@ -25,7 +25,7 @@ $zadanie = $_POST['newTask'];
 
 			
         if($query2===false) {
-            echo "dupa i chuj";
+            echo "błąd dodania zadania";
         } else {
         header('Location: index.php');
         }

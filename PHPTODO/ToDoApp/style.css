@@ -1,3 +1,9 @@
+.container {
+    height: auto;
+    width: 500px;
+    background-color: blue;
+}
+
 .done {
     background: aliceblue;
     margin:10px;

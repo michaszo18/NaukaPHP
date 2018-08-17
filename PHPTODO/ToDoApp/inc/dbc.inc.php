@@ -12,7 +12,7 @@ class DBConn {
     $this->userName = "root";
     $this->password = "";
     $this->dbname = "todoapp";
-    $this->charset = "utf8mb4";
+    $this->charset = "utf8";
 
     try {
       $dsn = "mysql:host=".$this->serverName.";dbname=".$this->dbname.";charset=".$this->charset;

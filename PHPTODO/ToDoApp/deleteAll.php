@@ -1,23 +1,16 @@
 <?php 
+include_once 'inc/dbc.inc.php';
 //Wyczyszczenie listy zadań
-try
-    {
-        $pdo = new PDO('mysql:host=localhost;dbname=todoapp', 'root', '');
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        
-        $deleteAll = $pdo -> query('DELETE FROM tasks');
-        
-        if($deleteAll===false) {
-            echo "dupa i chuj";
-        } else {
-        header('Location: index.php');
-        }
-        $pdo = null;
-            
+
+    $conn = new DBConn;
+    
+    $deleteAll = $conn->connect()->query('DELETE FROM tasks');
+    
+    if($deleteAll===false) {
+        echo "błąd usunięcia wszytkiego";
+    } else {
+    header('Location: index.php');
     }
-    catch(PDOException $e)
-    {
-        echo 'Połączenie nie mogło zostać utworzone: ' . $e->getMessage();
-    }
- 
+    $conn = null;
+    
 

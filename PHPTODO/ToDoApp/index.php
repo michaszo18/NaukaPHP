@@ -20,12 +20,10 @@
         </form>
         
         <?php 
-            $con = new DBConn;
-            $con->connect();  
+            $con = new DBConn; 
             $stmt = $con->connect()->query("SELECT * FROM tasks");
             $stmt->execute();
             $tasks = $stmt->fetchAll();
-
             echo '<ul>';
             foreach ($tasks as $task) {
                     //Słaby sposób na przesyłanie id zadania
@@ -70,14 +68,14 @@
 
 <a href="done.php&id=<?php echo $row['id']?>"></a>
 
-TODO: <br>
-1. <s> Dodać zmianę statusu zadania na done. STATUS = 1; </s> <br>
-2. <s> Dodać usuwanie zadań. </s> <br>
+<!-- TODO: <br>
+done. <s> Dodać zmianę statusu zadania na done. STATUS = 1; </s> <br>
+done. <s> Dodać usuwanie zadań. </s> <br>
 3. Zmienić system uzupłniania ID. <br>
-4. Wrzucić PDO do osobnej klasy. <br>
+done. Wrzucić PDO do osobnej klasy. <br>
 5. Uporządkować kod <br>
 6. Dodać bootstrapa <br>
 7. Dodać info, o tym że nie ma zadań <br>
 8. Lepszy sposób na wysyłanie ID <br>
 9. Zmienić nazwę done.php <br>
-10. Uporać się z charset
+10. Uporać się z charset -->
