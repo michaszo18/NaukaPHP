@@ -20,26 +20,18 @@
         </form>
         
         <?php 
-          $show = new ShowActivities();
+          $show = new ShowActivities();          
         ?>
         
-     
+    <button><a href="deleteAll.php">Usuń wszystkie zadania</a></button> 
     </div>
-    <form action="deleteAll.php" method="get">
-        <button type="submit">Usuń wszystko</button>
-    </form>
-
-
+    
 </body>
 </html>
-
-
-<!-- TODO: <br>
 
 
 
 
 
 7. Dodać info, o tym że nie ma zadań <br>
-8. Lepszy sposób na wysyłanie ID <br>
 

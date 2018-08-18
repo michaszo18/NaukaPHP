@@ -1,6 +1,8 @@
 <?php 
 include_once 'inc/dbc.inc.php';
 
+function deleteAllTasks()
+{
     $conn = new DBConn;
     $deleteAll = $conn->connect()->query('DELETE FROM tasks');
     if($deleteAll===false) {
@@ -9,5 +11,7 @@ include_once 'inc/dbc.inc.php';
     header('Location: index.php');
     }
     $conn = null;
-  
+}
+deleteAllTasks();
+
 
