@@ -12,14 +12,14 @@ class ShowActivities {
         foreach ($tasks as $task) {
                 //Słaby sposób na przesyłanie id zadania
                 //Jak inaczej przesyłać numer zadania do funkcji
-                $idNum = $task['id'];
+                
+                $_SESSION['taskID'] = $task['id'];
                 if($task['status'] == 1) {
                     echo "<li><s>";
                         echo "<form action='taskActivity.php' method='POST'>";
                         echo "<span name='task".$task['id']."'>".$task['id'].'. '.$task['task']."</span>";
                         echo "<button name = 'done' class ='done'>Oznacz jako ukończone</button>";
-                        echo "<button name = 'delete' class = 'delete'>Usuń zadanie</button>";
-                        echo "<input type='text' name='id' value=".$task['id'].">";
+                        echo "<button name = 'delete' class = 'delete'>Usuń zadanie</button>";          
                         echo "</form>";
                     echo "</s></li>";
                 } else {
@@ -28,7 +28,6 @@ class ShowActivities {
                         echo "<span name='task".$task['id']."'>".$task['id'].'. '.$task['task']."</span>";                           
                         echo "<button name ='done' class ='done'>Oznacz jako ukończone</button>";
                         echo "<button name = 'delete' class = 'delete'>Usuń zadanie</button>";
-                        echo "<input type='text' name='id' value=".$task['id'].">";
                         echo "</form>";
                     echo "</li>";
             }

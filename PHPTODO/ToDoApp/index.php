@@ -1,5 +1,6 @@
 <?php 
     include_once 'showActivities.php';
+    session_start();
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -32,15 +33,13 @@
 </body>
 </html>
 
-<!-- <a href="done.php&id=<?php echo $row['id']?>"></a> -->
 
 <!-- TODO: <br>
-done. <s> Dodać zmianę statusu zadania na done. STATUS = 1; </s> <br>
-done. <s> Dodać usuwanie zadań. </s> <br>
-3. Zmienić system uzupłniania ID. <br>
-done. Wrzucić PDO do osobnej klasy. <br>
-5. Uporządkować kod <br>
-6. Dodać bootstrapa <br>
+
+
+
+
+
 7. Dodać info, o tym że nie ma zadań <br>
 8. Lepszy sposób na wysyłanie ID <br>
 
