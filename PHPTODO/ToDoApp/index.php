@@ -21,8 +21,7 @@
         
         <?php 
           $show = new ShowActivities();          
-        ?>
-        
+        ?>  
     <button><a href="deleteAll.php">Usuń wszystkie zadania</a></button> 
     </div>
     
@@ -31,7 +30,4 @@
 
 
 
-
-
-7. Dodać info, o tym że nie ma zadań <br>
 

@@ -1,11 +1,8 @@
 <?php
     include_once 'inc/dbc.inc.php';
     session_start();
-    //Pobranie id 
-    //Koniecznie TODO
-    $id = $_SESSION['taskID'];
 
-    //Połączenie z bazą
+    $id = $_SESSION['taskID'];
     $con = new DBConn;
     $con->connect();  
 
