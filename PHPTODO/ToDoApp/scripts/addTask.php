@@ -1,11 +1,10 @@
 <?php 
-include_once 'inc/dbc.inc.php';
+include_once 'dbc.inc.php';
 
 function addTask()
 {
     $zadanie = $_POST['newTask'];
     $conn = new DBConn;
-    //Zapytanie SQL pobierające max wartość ID
     $result = $conn->connect()->query('SELECT MAX(id) FROM tasks');
     if(!$result) {
         echo "błąd pobierania danych";
@@ -19,7 +18,7 @@ function addTask()
     if($query2===false) {
         echo "błąd dodania zadania";
     } else {
-        header('Location: index.php');
+        header('Location: ../index.php');
     }
     $pdo = null;
 }

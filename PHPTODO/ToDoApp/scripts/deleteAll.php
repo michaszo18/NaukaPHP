@@ -1,5 +1,5 @@
 <?php 
-include_once 'inc/dbc.inc.php';
+include_once 'dbc.inc.php';
 
 function deleteAllTasks()
 {
@@ -8,7 +8,7 @@ function deleteAllTasks()
     if($deleteAll===false) {
         echo "błąd usunięcia wszytkiego";
     } else {
-    header('Location: index.php');
+    header('Location: ../index.php');
     }
     $conn = null;
 }
