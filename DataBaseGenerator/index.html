@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DataBaseGenerator</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="text-center">
+
+    <div class="container">
+
+        <form action="classes/createDB.php" method="post">
+            <h1>Witaj w generatorze baz danych</h1>
+            <h3 class="mb-3">Podaj nazwę bazy danych:</h3>
+                <input type="text" class="form-control" name="dbName">
+
+            <h3 class="mb-3">Podaj dane dostępu do bazy:</h3>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Nazwa hostu:</span>
+                </div>
+                <input type="text" class="form-control" name="dbHost" value="localhost">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Nazwa użytkownika:</span>
+                </div>
+                <input type="text" class="form-control" name="dbUsername" value="root">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Hasło:</span>
+                </div>
+                <input type="password" class="form-control" name="dbPassword" value="">
+            </div>
+
+
+            <h3 class="mb-3">Wybierz silnik bazy:</h3>
+            <div class="d-block my-3">
+                <div class="custom-control custom-radio">
+                    <input id="credit" name="dbEngine" type="radio" class="custom-control-input" checked required>
+                    <label class="custom-control-label" for="credit">MySQL</label>
+                </div>
+                <div class="custom-control custom-radio">
+                    <input id="debit" name="dbEngine" type="radio" class="custom-control-input" required disabled>
+                    <label class="custom-control-label" for="debit">SQLite</label>
+                </div>
+            </div>
+
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Utwórz bazę danych</button>
+
+        </form>
+
+    </div>
+</body>
+
+</html>

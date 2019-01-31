@@ -1,0 +1,14 @@
+.container {
+    font-family: 'Montserrat', sans-serif;
+    max-width: 700px;
+    height: 90vh;
+
+    display: grid;
+    align-items: center;
+
+
+}
+
+h1, h3 {
+    margin-top: 3vh;
+}
